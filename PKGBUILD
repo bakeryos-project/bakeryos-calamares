@@ -19,6 +19,10 @@ makedepends=(
 source=("calamares-$_ver.tar.gz::$_repository/releases/download/v$_ver/calamares-$_ver.tar.gz")
 sha256sums=('733bbbb00dc9f84874bd5c22960952f317ea2537565431179fa2152b2fbfdccc')
 
+pkgver() {
+    git describe --long --tags --always | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
 build() {
   rm -rf build
   
