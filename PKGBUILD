@@ -7,6 +7,7 @@ license=("GPL-3.0-or-later")
 arch=('x86_64')
 _ver=3.4.2
 _repository="https://codeberg.org/Calamares/calamares"
+options=(!debug !strip)
 
 depends=(
   'kcoreaddons' 'kpmcore' 'libpwquality' 'qt6-declarative' 'qt6-svg' 'yaml-cpp'
