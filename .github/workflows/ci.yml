@@ -42,8 +42,6 @@ jobs:
           sudo -u builder makepkg -s --noconfirm
 
       - name: Sign packages
-        env:
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           echo "$GPG_PASSPHRASE" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --detach-sign *.pkg.tar.zst
 
