@@ -21,10 +21,11 @@ jobs:
         run: |
           pacman -Sy --noconfirm base-devel gnupg git rclone
 
-      - name: Load Secrets from Doppler
-        uses: dopplerhq/action-load-secrets-to-environment@v1
-        env:
-          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+      - uses: dopplerhq/secrets-fetch-action@v2.0.0
+        id: doppler
+        with:
+          doppler-token: ${{ secrets.DOPPLER_TOKEN }}
+          inject-env-vars: true
 
       - name: Import GPG Key
         run: |
