@@ -1,5 +1,5 @@
 pkgname="bakeryos-calamares"
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="Calamares for BakeryOS"
 url=""
@@ -10,8 +10,44 @@ _repository="https://codeberg.org/Calamares/calamares"
 options=(!debug !strip)
 
 depends=(
-  'kcoreaddons' 'kpmcore' 'libpwquality' 'qt6-declarative' 'qt6-svg' 'yaml-cpp'
+  'kcoreaddons'
+  'kpmcore'
+  'libpwquality'
+  'qt6-declarative'
+  'qt6-svg'
+  'yaml-cpp'
+
+  'squashfs-tools'
+  'parted'
+  'gptfdisk'
+  'dosfstools'
+
+  'efibootmgr'
+  'grub'
+  'os-prober'
+
+  'xdg-user-dirs'
+
+  'konsole'
+  'kcrash'
+  'kservice'
+  'ki18n'
+  'kwidgetsaddons'
+  'kconfig'
+  'kconfigwidgets'
+  'kdbusaddons'
+  'kwindowsystem'
+  'kauth'
+  'kitemviews'
+  'kguiaddons'
+  'kcodecs'
+  'karchive'
+  'kjobwidgets'
+  'knotifications'
+  'kpackage'
 )
+
+
 makedepends=(
   'extra-cmake-modules' 'libglvnd' 'ninja' 'qt6-tools' 'qt6-translations'
 )
