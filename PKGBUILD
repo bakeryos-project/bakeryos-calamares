@@ -1,5 +1,5 @@
 pkgname="bakeryos-calamares"
-pkgver=1.1.0
+pkgver=1.1.1
 pkgrel=1
 pkgdesc="Calamares for BakeryOS"
 url=""
@@ -92,4 +92,5 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 "${startdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
